@@ -80,7 +80,7 @@ class PokemonGo(object):
         #logger.debug("Running pidof calcy got code %d: %s", return_code, stdout)
         #self.calcy_pid = stdout.decode('utf-8').strip()
         # cmd = ["adb", "-s", await self.get_device(), "logcat", "-T", "1", "-v", "brief", "--pid", self.calcy_pid]
-        cmd = ["adb", "-s", await self.get_device(), "logcat", "-T", "1", "-v", "brief" , "MainService:D i:D ClipboardReceiver:D *:S"]
+        cmd = ["adb", "-s", await self.get_device(), "logcat", "-T", "1", "-v", "brief" , "MainService:D j:D ClipboardReceiver:D *:S"]
         logger.info("Starting logcat %s", cmd)
         self.logcat_task = await asyncio.create_subprocess_exec(
             *cmd,
